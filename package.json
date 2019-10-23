@@ -1,0 +1,9 @@
+{
+  "name": "chrome-performance-video",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "chrome performance video",
+  "repository": "https://github.com/kyuwoo-choi/chrome-performance-video.git",
+  "author": "kyuwoo-choi"
+}
