@@ -1,9 +1,41 @@
 {
   "name": "chrome-performance-video",
-  "version": "0.1.0",
-  "main": "index.js",
+  "version": "1.0.0",
+  "main": "dist/index.js",
   "license": "MIT",
-  "description": "chrome performance video",
+  "description": "create and play performance video out of chrome devtools performance profile",
   "repository": "https://github.com/kyuwoo-choi/chrome-performance-video.git",
-  "author": "kyuwoo-choi"
+  "author": "kyuwoo-choi",
+  "scripts": {
+    "demo": "parcel demo/index.html --out-dir .cache/demo",
+    "build": "parcel build lib/index.js",
+    "test": "cypress run",
+    "test:watch": "cypress open"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.4",
+    "@babel/plugin-transform-runtime": "7.6.2",
+    "@babel/preset-env": "7.6.3",
+    "cypress": "3.5.0",
+    "parcel-bundler": "1.12.4",
+    "prettier": "1.18.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "keywords": [
+    "chrome",
+    "devtools",
+    "performance",
+    "timeline",
+    "video",
+    "movie",
+    "webm",
+    "canvas"
+  ]
 }
