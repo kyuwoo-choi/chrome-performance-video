@@ -8,7 +8,7 @@
   "author": "kyuwoo-choi",
   "scripts": {
     "demo": "parcel demo/index.html --out-dir .cache/demo",
-    "build": "parcel build lib/index.js",
+    "build": "parcel build lib/index.js --global chromePerformanceVideo",
     "test": "cypress run",
     "test:watch": "cypress open"
   },
