@@ -3,4 +3,59 @@ layout: default
 title: Home
 ---
 
-<h1>hello4</h1>
+<!-- Compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+/>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<style>
+  #progress {
+    visibility: hidden;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <video id="video" controls class="col s12" style="height: 500px"></video>
+  </div>
+  <div id="progress" class="row progress">
+    <div class="indeterminate"></div>
+  </div>
+  <div class="row">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Chrome Performance Profile</span>
+        <input type="file" id="file" accept=".json" />
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../dist/chrome-performance-video.js"></script>
+<script>
+  document.querySelector('#file').addEventListener('change', async event => {
+    const progress = document.querySelector('#progress')
+    progress.style.visibility = 'visible'
+    try {
+      const reader = new FileReader()
+      reader.readAsText(event.target.files[0])
+      const data = (await new Promise(res => (reader.onload = res))).target
+        .result
+      const profile = JSON.parse(data)
+      const profileVideo = await chromePerformanceVideo(profile)
+      const video = document.querySelector('#video')
+      video.src = URL.createObjectURL(profileVideo)
+      video.load()
+      video.onloadeddata = () => video.play()
+    } catch (e) {
+      M.toast({ html: e.toString() })
+    } finally {
+      progress.style.visibility = 'hidden'
+    }
+  })
+</script>
