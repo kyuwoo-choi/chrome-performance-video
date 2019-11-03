@@ -1,6 +1,6 @@
 {
   "name": "chrome-performance-video",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0",
   "main": "dist/chrome-performance-video.js",
   "license": "MIT",
   "description": "create and play performance video out of chrome devtools performance profile",
