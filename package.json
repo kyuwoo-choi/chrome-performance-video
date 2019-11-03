@@ -9,6 +9,7 @@
   "scripts": {
     "demo": "parcel demo/index.html --out-dir .cache/demo",
     "build": "parcel build lib/index.js --out-file chrome-performance-video.js --global chromePerformanceVideo",
+    "docs": "jsdoc2md ./lib/**/*.js > docs/api.md ",
     "test": "cypress run",
     "test:watch": "cypress open"
   },
