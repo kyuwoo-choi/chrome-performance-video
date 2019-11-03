@@ -7,7 +7,7 @@
   "repository": "https://github.com/kyuwoo-choi/chrome-performance-video.git",
   "author": "kyuwoo-choi",
   "scripts": {
-    "demo": "parcel demo/index.html --out-dir .cache/demo",
+    "example": "parcel example/index.html --out-dir .cache/example",
     "build": "parcel build lib/index.js --out-file chrome-performance-video.js --global chromePerformanceVideo",
     "docs": "jsdoc2md ./lib/**/*.js > docs/api.md ",
     "test": "cypress run",

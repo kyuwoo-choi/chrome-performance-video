@@ -17,7 +17,7 @@ const download = (video, fileName = 'performance.webm') => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   const video = await chromePerformanceVideo(performanceProfile)
-  const player = document.querySelector('#video')
+  const player = document.querySelector('#player')
   player.src = URL.createObjectURL(video)
   player.load()
 
