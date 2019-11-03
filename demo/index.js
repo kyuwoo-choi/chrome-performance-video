@@ -16,8 +16,10 @@ const download = (video, fileName = 'performance.webm') => {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const canvas = document.querySelector('#canvas')
-  const video = await chromePerformanceVideo(performanceProfile, canvas)
+  const video = await chromePerformanceVideo(performanceProfile)
+  const player = document.querySelector('#video')
+  player.src = URL.createObjectURL(video)
+  player.load()
 
   const downloadButton = document.querySelector('#download')
   downloadButton.disabled = false
