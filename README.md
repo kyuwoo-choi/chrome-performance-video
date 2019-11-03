@@ -29,3 +29,7 @@ const player = document.querySelector('#player')
 player.src = URL.createObjectURL(video)
 player.load()
 ```
+
+# license
+
+MIT © KyuWoo Choi
